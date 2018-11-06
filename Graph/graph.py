@@ -1,9 +1,10 @@
 
 from __future__ import annotations
 from typing import List, Dict
+
 from Graph.node import Node
 from Graph.edge import Edge
-from collections import namedtuple
+
 
 class Graph:
     def __init__(self) -> None:
@@ -18,12 +19,12 @@ class Graph:
         return v
 
     def add_edge(self, source_node: Node, dest_node: Node, cost: float) -> None:
-        v: Node = self.get_node(source_node.get_id())
-        w: Node = self.get_node(dest_node.get_id())
+        v: Node = self.get_node(source_node.id)
+        w: Node = self.get_node(dest_node.id)
         v.adj_list.append(Edge(w, cost))
 
-    def build_graph(self) -> None:
-        with open("Graph/graph.txt") as graph:
+    def build_graph(self, path: str) -> None:
+        with open(path) as graph:
             graph = graph.read()
             graph = graph.split('\n')
             graph = [line.split(" ") for line in graph]
