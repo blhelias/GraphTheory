@@ -1,6 +1,19 @@
-from typing import Dict
+"""
+Example:
+    >>> gr = Graph()
+    >>> gr.build_graph("../test/test_graph.txt")
+    >>> my_graph = gr.node_map
+    >>> dijkstra = Dijkstra()
+    >>> dijkstra.shortest_path("1", my_graph)
+    >>> node_destination = gr.get_node("6")
+    >>> gr.print_shortest_path(node_destination)
+"""
+
 import sys
 sys.path.insert(0, "../")
+
+from typing import Dict
+
 from Graph.graph import Graph
 from Graph.path import Path
 from utils import PriorityQueue
@@ -30,21 +43,16 @@ class Dijkstra:
             v.scratch = True
             node_seen += 1
             # Check each of the neighbors
-            for _, e in enumerate(v.adj_list):
+            for e in v.adj_list:
                 w = e.destination
                 cost_vw = e.weight
-                # Check weights are positives
+                # Check if weights are positives
                 if cost_vw < 0:
                     raise ValueError(" Graph has negative weight !!!")
                 # update distance of the node if necessary
-                if w.dist > (v.dist + cost_vw):
+                if w.dist >= v.dist + cost_vw:
                     w.dist = v.dist + cost_vw
                     w.prev = v
                     pq.push(Path(w, w.dist))
 
-if __name__ == "__main__":
-    gr = Graph()
-    gr.build_graph("../test/test_graph.txt")
-    my_graph = gr.node_map
-    dijkstra = Dijkstra()
-    dijkstra.shortest_path("1", my_graph)
+

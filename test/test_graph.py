@@ -3,17 +3,11 @@ from Graph.edge import Edge
 from Graph.graph import Graph
 from Graph.path import Path
 from utils import PriorityQueue
+from Dijkstra.dijkstra import Dijkstra
 import random
 
 """Ugly testing script
 """
-
-def read_graph():
-    with open("test_graph.txt") as graph:
-        graph = graph.read()
-        graph = graph.split('\n')
-        graph = [line.split(" ") for line in graph]
-        return graph
 
 def test_node():
     node_1 = Node(1)
@@ -61,7 +55,16 @@ def  test_priority_q():
     while len(pq._queue)>0:
         node_out = pq.pop()
         res.append(int(node_out.id))
-    assert res == [6, 2, 3, 5, 4, 1]
+    assert res == [1, 4, 5, 3, 2, 6]
+
+def test_print_shotest_path():
+    gr = Graph()
+    gr.build_graph("test/test_graph.txt")
+    my_graph = gr.node_map
+    dijkstra = Dijkstra()
+    dijkstra.shortest_path("1", my_graph)
+    node_destination = gr.get_node("6")
+    gr.print_shortest_path(node_destination)
 
     
 

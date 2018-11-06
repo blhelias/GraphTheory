@@ -67,6 +67,15 @@ class Graph:
             v = self.get_node(node_element[0])
             w = self.get_node(node_element[1])
             self.add_edge(v, w, node_element[2])
+    
+    def print_shortest_path(self, destination_node: "Node"):
+        dist: float = destination_node.dist
+        path_node = destination_node
+        print(path_node)
+        while dist > 0.:
+            path_node = path_node.prev
+            dist = path_node.dist
+            print(path_node)
 
     def __repr__(self) -> None:
         """Print our graph

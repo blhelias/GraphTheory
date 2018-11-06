@@ -15,5 +15,5 @@ class Node:
     def __repr__(self):
         return "{ " + f"id: {self.id}, "\
                 + f"num_neighbors: {len(self.adj_list)}, "\
-                + f"prev: {self.prev}"\
+                + f"dist: {self.dist}"\
                 + " }"

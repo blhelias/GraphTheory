@@ -14,7 +14,7 @@ class PriorityQueue:
         Arguments:
             path {Path}
         """
-        heapq.heappush(self._queue, (-path.cost, self._index, path.dest))
+        heapq.heappush(self._queue, (path.cost, self._index, path.dest))
         self._index += 1
  
     def pop(self):
