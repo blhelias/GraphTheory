@@ -7,6 +7,12 @@ Example:
     >>> dijkstra.shortest_path("1", my_graph)
     >>> node_destination = gr.get_node("6")
     >>> gr.print_shortest_path(node_destination)
+    { id: 6, num_neighbors: 0, dist: 1.2 }
+    { id: 5, num_neighbors: 1, dist: 0.5 }
+    { id: 3, num_neighbors: 1, dist: 0.4 }
+    { id: 4, num_neighbors: 1, dist: 0.3 }
+    { id: 2, num_neighbors: 1, dist: 0.2 }
+    { id: 1, num_neighbors: 3, dist: 0.0 }
 """
 
 import sys
@@ -54,5 +60,3 @@ class Dijkstra:
                     w.dist = v.dist + cost_vw
                     w.prev = v
                     pq.push(Path(w, w.dist))
-
-
