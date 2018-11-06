@@ -1,36 +1,50 @@
 from typing import Dict
-
-import heapq
 import sys
-# sys.path.append("../")
-# print(sys.path)
+sys.path.insert(0, "../")
 from Graph.graph import Graph
+from Graph.path import Path
+from utils import PriorityQueue
+
 
 class Dijkstra:
+    """Complexity : O(|V|**2)
     """
-    Complexity : O(|V|**2)
-    """
-    def __init__(self):
-        self.pq = heapq.heapify([])
-
     def shortest_path(self, source: "Node", node_map: Dict):
+        pq = PriorityQueue()
         # Initialize distance and visited parameter for each node
         for _, value_node in node_map.items():
             value_node.scratch = False
             value_node.det_dist = float("Inf")
-
-        source = node_map[source.get_id()]
-        source.set_dist(0.)
-        heapq.heappush(self.pq, source)
-        # begin dijkstra shortest path
+        # Take the source node and push it int the pq
+        source = node_map[source]
+        source.dist = 0.
+        pq.push(Path(source, source.dist))
+        # Begin dijkstra shortest path !
         node_seen = 0
-        # while (len(self.pq) > 0) and (node_seen < len(node_map)):
-        #     vrec: "Path" = heapq.heappop(self.pq)
-        #     v = vrec.dest
+        while (not pq.is_empty()) and (node_seen < len(node_map)):
+            v = pq.pop() # path.dest
+            #  Check if we already visited the node 
+            if v.scratch:
+                continue
+            # Now it 's visited
+            v.scratch = True
+            node_seen += 1
+            # Check each of the neighbors
+            for _, e in enumerate(v.adj_list):
+                w = e.destination
+                cost_vw = e.weight
+                # Check weights are positives
+                if cost_vw < 0:
+                    raise ValueError(" Graph has negative weight !!!")
+                # update distance of the node if necessary
+                if w.dist > (v.dist + cost_vw):
+                    w.dist = v.dist + cost_vw
+                    w.prev = v
+                    pq.push(Path(w, w.dist))
 
 if __name__ == "__main__":
     gr = Graph()
-    gr.build_graph("../test/graph.txt")
+    gr.build_graph("../test/test_graph.txt")
     my_graph = gr.node_map
     dijkstra = Dijkstra()
-    dijkstra.shortest_path(1995, my_graph)
+    dijkstra.shortest_path("1", my_graph)

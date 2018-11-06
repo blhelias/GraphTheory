@@ -7,10 +7,23 @@ from Graph.edge import Edge
 
 
 class Graph:
+    """Let's build our graph !!!
+    """
+
     def __init__(self) -> None:
         self.node_map: Dict = {}
 
-    def get_node(self, node_id: int) -> Node:
+    def get_node(self, node_id: int) -> "Node":
+        """ Assert a node exists. If it is not the case,
+        insert it in the hashmap (dict)
+
+        Arguments:
+            node_id {int} -- key of the node we are looking for.
+        
+        Returns:
+            Node
+        """
+
         if node_id not in self.node_map:
             v = Node(node_id)
             self.node_map[node_id] = v
@@ -18,12 +31,33 @@ class Graph:
             v = self.node_map[node_id]
         return v
 
-    def add_edge(self, source_node: Node, dest_node: Node, cost: float) -> None:
+    def add_edge(self, source_node: Node, 
+                 dest_node: Node, cost: float) -> None:
+        """ Add a new neighbor for a given node
+        
+        Arguments:
+            source_node {Node} -- node which is given new neighbor
+            dest_node {Node} -- new neighbor
+            cost {float} -- weight of the edge
+        
+        Returns:
+            None 
+        """
+
         v: Node = self.get_node(source_node.id)
         w: Node = self.get_node(dest_node.id)
         v.adj_list.append(Edge(w, cost))
 
     def build_graph(self, path: str) -> None:
+        """Build graph, which is a map of nodes
+        
+        Arguments:
+            path {str} -- path of the .txt file representing the graph
+        
+        Returns:
+            None
+        """
+
         with open(path) as graph:
             graph = graph.read()
             graph = graph.split('\n')
@@ -34,7 +68,10 @@ class Graph:
             w = self.get_node(node_element[1])
             self.add_edge(v, w, node_element[2])
 
-    def __repr__(self):
+    def __repr__(self) -> None:
+        """Print our graph
+        """
+
         to_print = ""
         for node_key, node_value in self.node_map.items():
             to_print += f"'\n' node key = {node_key}, node value = {node_value}"

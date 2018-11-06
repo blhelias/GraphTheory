@@ -3,7 +3,7 @@ from __future__ import annotations
 class Edge:
     def __init__(self, destination, weight: float):
         self.destination: "Node" = destination
-        self.weight = weight
+        self.weight = float(weight)
     
     def __repr__(self):
         return f" --> {self.destination.id},"\

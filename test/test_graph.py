@@ -2,6 +2,11 @@ from Graph.node import Node
 from Graph.edge import Edge
 from Graph.graph import Graph
 from Graph.path import Path
+from utils import PriorityQueue
+import random
+
+"""Ugly testing script
+"""
 
 def read_graph():
     with open("test_graph.txt") as graph:
@@ -32,15 +37,31 @@ def test_add_edge():
     gr.add_edge(n, Node(3), 0.7)
     gr.add_edge(n, Node(2), 0.7)
     gr.add_edge(n, Node(1), 0.7)
-    print(n.adj_list)
+    print(n.adj_list) # print the results and see what happens
 
 def test_build_graph():
     gr = Graph()
     gr.build_graph("test/test_graph.txt")
-    print(gr)
+    print(gr) # only print the graph to check results
 
 def test_path():
     p1 = Path(Node(0), 0.6)
     p2 = Path(Node(0), 0.5)
     assert p1 > p2
+
+def  test_priority_q():
+    pq = PriorityQueue()
+    gr = Graph()
+    gr.build_graph("test/test_graph.txt")
+    random.seed(777)
+    for _, value in gr.node_map.items():
+        value.dist = random.random()
+        pq.push(Path(value, value.dist))
+    res = []
+    while len(pq._queue)>0:
+        node_out = pq.pop()
+        res.append(int(node_out.id))
+    assert res == [6, 2, 3, 5, 4, 1]
+
+    
 

@@ -1,4 +1,7 @@
 class Path:
+    """Usefull class used by PriorityQueue
+    """
+
     def __init__(self, dest: "Node", cost: float):
         self.dest = dest
         self.cost = cost
