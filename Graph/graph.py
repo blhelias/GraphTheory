@@ -2,8 +2,8 @@
 from __future__ import annotations
 from typing import List, Dict
 
-from Graph.node import Node
-from Graph.edge import Edge
+from ..Graph.node import Node
+from ..Graph.edge import Edge
 
 
 class Graph:
@@ -11,7 +11,7 @@ class Graph:
     """
 
     def __init__(self) -> None:
-        self.node_map: Dict = {}
+        self.node_map: Dict = {} #hashmap equivalent in python
 
     def get_node(self, node_id: int) -> "Node":
         """ Assert a node exists. If it is not the case,
@@ -23,7 +23,6 @@ class Graph:
         Returns:
             Node
         """
-
         if node_id not in self.node_map:
             v = Node(node_id)
             self.node_map[node_id] = v
@@ -43,7 +42,6 @@ class Graph:
         Returns:
             None 
         """
-
         v: Node = self.get_node(source_node.id)
         w: Node = self.get_node(dest_node.id)
         v.adj_list.append(Edge(w, cost))
@@ -57,7 +55,6 @@ class Graph:
         Returns:
             None
         """
-
         with open(path) as graph:
             graph = graph.read()
             graph = graph.split('\n')
@@ -80,7 +77,6 @@ class Graph:
     def __repr__(self) -> None:
         """Print our graph
         """
-
         to_print = ""
         for node_key, node_value in self.node_map.items():
             to_print += f"'\n' node key = {node_key}, node value = {node_value}"

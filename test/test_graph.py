@@ -1,9 +1,10 @@
-from Graph.node import Node
-from Graph.edge import Edge
-from Graph.graph import Graph
-from Graph.path import Path
-from utils import PriorityQueue
-from Dijkstra.dijkstra import Dijkstra
+from ..Graph.node import Node
+from ..Graph.edge import Edge
+from ..Graph.graph import Graph
+from ..Graph.path import Path
+from ..utils import PriorityQueue
+from ..Dijkstra.dijkstra import Dijkstra
+from ..BFS.bfs import BFS
 import random
 
 """Ugly testing script
@@ -66,5 +67,9 @@ def test_print_shotest_path():
     node_destination = gr.get_node("6")
     gr.print_shortest_path(node_destination)
 
-    
-
+def test_bfs():
+    gr = Graph()
+    gr.build_graph("test/test_graph.txt")
+    my_graph = gr.node_map
+    bfs = BFS()
+    bfs.graph_traversal("1", my_graph)

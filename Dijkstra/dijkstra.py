@@ -1,32 +1,36 @@
-"""
-Example:
-    >>> gr = Graph()
-    >>> gr.build_graph("../test/test_graph.txt")
-    >>> my_graph = gr.node_map
-    >>> dijkstra = Dijkstra()
-    >>> dijkstra.shortest_path("1", my_graph)
-    >>> node_destination = gr.get_node("6")
-    >>> gr.print_shortest_path(node_destination)
-    { id: 6, num_neighbors: 0, dist: 1.2 }
-    { id: 5, num_neighbors: 1, dist: 0.5 }
-    { id: 3, num_neighbors: 1, dist: 0.4 }
-    { id: 4, num_neighbors: 1, dist: 0.3 }
-    { id: 2, num_neighbors: 1, dist: 0.2 }
-    { id: 1, num_neighbors: 3, dist: 0.0 }
-"""
 
-import sys
-sys.path.insert(0, "../")
+
+# import sys
+# sys.path.insert(0, "../")
 
 from typing import Dict
 
-from Graph.graph import Graph
-from Graph.path import Path
-from utils import PriorityQueue
+from ..Graph.graph import Graph
+from ..Graph.path import Path
+from ..utils import PriorityQueue
 
 
 class Dijkstra:
-    """Complexity : O(|V|**2)
+    """Let's implement Dijkstra algorithm !
+    Complexity : O(|V|**2)
+
+    Example
+    -------
+        >>> from ..Graph.graph import Graph
+        >>> from ..Dijkstra.dijkstra import Dijkstra
+        >>> gr = Graph()
+        >>> gr.build_graph("../test/test_graph.txt")
+        >>> my_graph = gr.node_map
+        >>> dijkstra = Dijkstra()
+        >>> dijkstra.shortest_path("1", my_graph)
+        >>> node_destination = gr.get_node("6")
+        >>> gr.print_shortest_path(node_destination)
+        { id: 6, num_neighbors: 0, dist: 1.2 }
+        { id: 5, num_neighbors: 1, dist: 0.5 }
+        { id: 3, num_neighbors: 1, dist: 0.4 }
+        { id: 4, num_neighbors: 1, dist: 0.3 }
+        { id: 2, num_neighbors: 1, dist: 0.2 }
+        { id: 1, num_neighbors: 3, dist: 0.0 }
     """
     def shortest_path(self, source: "Node", node_map: Dict):
         pq = PriorityQueue()
