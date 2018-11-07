@@ -36,7 +36,7 @@ def test_add_edge():
 
 def test_build_graph():
     gr = Graph()
-    gr.build_graph("test/test_graph.txt")
+    gr.build_graph("Tests/test_graph.txt")
     print(gr) # only print the graph to check results
 
 def test_path():
@@ -47,7 +47,7 @@ def test_path():
 def  test_priority_q():
     pq = PriorityQueue()
     gr = Graph()
-    gr.build_graph("test/test_graph.txt")
+    gr.build_graph("Tests/test_graph.txt")
     random.seed(777)
     for _, value in gr.node_map.items():
         value.dist = random.random()
@@ -60,7 +60,7 @@ def  test_priority_q():
 
 def test_print_shotest_path():
     gr = Graph()
-    gr.build_graph("test/test_graph.txt")
+    gr.build_graph("Tests/test_graph.txt")
     my_graph = gr.node_map
     dijkstra = Dijkstra()
     dijkstra.shortest_path("1", my_graph)
@@ -69,7 +69,7 @@ def test_print_shotest_path():
 
 def test_bfs():
     gr = Graph()
-    gr.build_graph("test/test_graph.txt")
+    gr.build_graph("Tests/test_graph.txt")
     my_graph = gr.node_map
     bfs = BFS()
     bfs.graph_traversal("1", my_graph)

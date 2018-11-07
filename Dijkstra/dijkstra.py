@@ -32,6 +32,7 @@ class Dijkstra:
         { id: 2, num_neighbors: 1, dist: 0.2 }
         { id: 1, num_neighbors: 3, dist: 0.0 }
     """
+    
     def shortest_path(self, source: "Node", node_map: Dict):
         pq = PriorityQueue()
         # Initialize distance and visited parameter for each node
