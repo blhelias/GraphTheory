@@ -1,17 +1,36 @@
 # GraphTheory
 Let's dive into graph theory world, we address topic such as data structures, shortest path, graph traversal...
+----------------------------------------
+  Table                    .txt file
+ ----------------------   --------------
+ <img src="graph.png"/>                           
+                            1 2 0.2
+                            1 3 0.6
+                            1 3 0.6
+                            2 4 0.1
+                            1 5 2.5
+                            3 5 0.1
+                            5 6 0.7
+                            4 3 0.1
+                            
+-----------------------------------------
+### Import
 
 ```python
-from graphTheory.BFS.bfs import BFS
-from graphTheory.Dijkstra.dijkstra import Dijkstra
-from graphTheory.Graph.graph import Graph
+from graphTheory.BFS import BFS
+from graphTheory.Dijkstra import Dijkstra
+from graphTheory.Graph import Graph
+```
 
+## BFS
+
+```python
 ##########
 #TEST BFS
 ##########
 
 gr_bfs = Graph()
-gr_bfs.build_graph("graphTheory/Tests/test_graph.txt")
+gr_bfs.build_graph(<"file path">)
 my_graph_bfs = gr_bfs.node_map
 bfs = BFS()
 bfs.graph_traversal("1", my_graph_bfs)
@@ -25,13 +44,15 @@ bfs.graph_traversal("1", my_graph_bfs)
   { id: 6, num_neighbors: 0, dist: inf }
 ```
 
+## Dijkstra
+
 ```python
 ###############
 # TEST DIJKSTRA
 ###############
 
 gr_dj = Graph()
-gr_dj.build_graph("graphTheory/Tests/test_graph.txt")
+gr_dj.build_graph(<"file path">)
 my_graph_dj = gr_dj.node_map
 dijkstra = Dijkstra()
 dijkstra.shortest_path("1", my_graph_dj)
