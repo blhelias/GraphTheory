@@ -1,17 +1,9 @@
 # GraphTheory
 Let's dive into graph theory world, we address topic such as data structures, shortest path, graph traversal...
-----------------------------------------
-  Table                    .txt file
- ----------------------   --------------
- <img src="graph.png"/>                           
-                            1 2 0.2
-                            1 3 0.6
-                            1 3 0.6
-                            2 4 0.1
-                            1 5 2.5
-                            3 5 0.1
-                            5 6 0.7
-                            4 3 0.1
+
+| Graph | .txt file |
+| :---: | ---
+| <img src="24226766.png" width=200/> |1 2 0.2 <br/> 1 3 0.6 <br/> 1 3 0.6<br/> 2 4 0.1<br/> 1 5 2.5 <br/>3 5 0.1<br/> 5 6 0.7 <br/>4 3 0.1<br/>
                             
 -----------------------------------------
 ### Import
