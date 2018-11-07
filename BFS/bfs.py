@@ -9,7 +9,8 @@ class BFS:
     complexity :  O(|E|+|V|)
     Example
     -------
-    >>> import 
+    >>> from graphTheory.BFS.bfs import BFS
+    >>> from graphTheory.Graph.graph import Graph
     >>> gr = Graph()
     >>> gr.build_graph("test/test_graph.txt")
     >>> my_graph = gr.node_map
