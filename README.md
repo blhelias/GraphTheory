@@ -1,7 +1,7 @@
 # GraphTheory
 Let's dive into graph theory world, we address topic such as data structures, shortest path, graph traversal...
 
-```
+```python
 from graphTheory.BFS.bfs import BFS
 from graphTheory.Dijkstra.dijkstra import Dijkstra
 from graphTheory.Graph.graph import Graph
