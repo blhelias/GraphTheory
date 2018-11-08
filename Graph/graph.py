@@ -1,4 +1,4 @@
-from __future__ import annotations
+# from __future__ import annotations
 from typing import List, Dict
 
 from ..Graph.node import Node
@@ -64,7 +64,7 @@ class Graph:
             w = self.get_node(node_element[1])
             self.add_edge(v, w, node_element[2])
     
-    def print_shortest_path(self, destination_node: "Node"):
+    def print_shortest_path(self, destination_node: Node):
         dist: float = destination_node.dist
         path_node = destination_node
         print(path_node)
@@ -72,11 +72,16 @@ class Graph:
             path_node = path_node.prev
             dist = path_node.dist
             print(path_node)
+    
+    def reset(self):
+        for _, value_node in self.node_map.items():
+            value_node.scratch = False
+            value_node.det_dist = float("Inf")
 
     def __repr__(self) -> None:
         """Print our graph
         """
         to_print = ""
         for node_key, node_value in self.node_map.items():
-            to_print += f"'\n' node key = {node_key}, node value = {node_value}"
+            to_print += f"'\n' node key = {node_key}, node value = {node_value}, scratch = {node_value.scratch}"
         return to_print

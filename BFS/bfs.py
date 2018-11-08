@@ -9,13 +9,13 @@ class BFS:
     complexity :  O(|E|+|V|)
     Example
     -------
-    >>> from graphTheory.BFS.bfs import BFS
-    >>> from graphTheory.Graph.graph import Graph
+    >>> from graphTheory.BFS import BFS
+    >>> from graphTheory.Graph import Graph
     >>> gr = Graph()
     >>> gr.build_graph("test/test_graph.txt")
     >>> my_graph = gr.node_map
     >>> bfs = BFS()
-    >>> bfs.graph_traversial("1", my_graph)
+    >>> bfs.graph_traversal("1", my_graph)
     { id: 1, num_neighbors: 3, dist: inf }
     { id: 2, num_neighbors: 1, dist: inf }
     { id: 3, num_neighbors: 1, dist: inf }
@@ -33,10 +33,6 @@ class BFS:
         """
 
         q = queue.Queue(maxsize=20)
-        # Initialize distance and visited parameter for each node
-        for _, value_node in node_map.items():
-            value_node.scratch = False
-            value_node.det_dist = float("Inf")
         # Take the source node and push it int the pq
         source = node_map[source]
         # source.dist = 0.

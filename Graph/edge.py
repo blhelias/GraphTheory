@@ -1,4 +1,4 @@
-from __future__ import annotations
+# from __future__ import annotations
 
 class Edge:
     def __init__(self, destination, weight: float):

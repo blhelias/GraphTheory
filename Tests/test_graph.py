@@ -5,6 +5,7 @@ from ..Graph.path import Path
 from ..utils import PriorityQueue
 from ..Dijkstra.dijkstra import Dijkstra
 from ..BFS.bfs import BFS
+from ..DFS.dfs import DFS
 import random
 
 """Ugly testing script
@@ -64,6 +65,9 @@ def test_print_shotest_path():
     my_graph = gr.node_map
     dijkstra = Dijkstra()
     dijkstra.shortest_path("1", my_graph)
+    print()
+    print("Dijkstra")
+    print()
     node_destination = gr.get_node("6")
     gr.print_shortest_path(node_destination)
 
@@ -72,4 +76,41 @@ def test_bfs():
     gr.build_graph("Tests/test_graph.txt")
     my_graph = gr.node_map
     bfs = BFS()
+    print()
+    print("BFS")
+    print()
     bfs.graph_traversal("1", my_graph)
+
+def test_dfs_rec():
+    graph_dfs = Graph()
+    graph_dfs.build_graph("Tests/test_graph.txt")
+    my_graph_dfs = graph_dfs.node_map
+    dfs = DFS()
+    print()
+    print("DFS recursive")
+    print()
+    dfs.graph_traversal_rec("1", my_graph_dfs)
+
+def test_dfs():
+    graph_dfs = Graph()
+    graph_dfs.build_graph("Tests/test_graph.txt")
+    my_graph_dfs = graph_dfs.node_map
+    dfs = DFS()
+    print()
+    print("DFS iterative")
+    print()
+    dfs.graph_traversal("1", my_graph_dfs)
+
+def test_reset():
+    graph_dfs = Graph()
+    graph_dfs.build_graph("Tests/test_graph.txt")
+    my_graph_dfs = graph_dfs.node_map
+    dfs = DFS()
+    print()
+    print("DFS iterative")
+    print()
+    dfs.graph_traversal("1", my_graph_dfs)
+    print()
+    print(my_graph_dfs)
+    graph_dfs.reset()
+    print(my_graph_dfs)

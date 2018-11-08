@@ -1,4 +1,4 @@
-from __future__ import annotations
+# from __future__ import annotations
 from typing import List
 
 class Node:
@@ -9,11 +9,12 @@ class Node:
         self.dist = float("Inf")
         self.prev = None
     
-    def __eq__(self, other: Node):
+    def __eq__(self, other: "Node"):
         return self.id == other.id
 
     def __repr__(self):
         return "{ " + f"id: {self.id}, "\
                 + f"num_neighbors: {len(self.adj_list)}, "\
+                + f"scratch: {self.scratch}, "\
                 + f"dist: {self.dist}"\
                 + " }"
