@@ -9,7 +9,7 @@ Let's dive into graph theory world, we address topic such as data structures, sh
     </tr>
     <tr>
       <td>
-          <img src="doc/graph.png" width=400/>
+          <img src="https://github.com/blhelias/GraphTheory/blob/master/doc/graph.PNG" width=400/>
       </td>
       <td>
         <p>1 2 0.2<br/>1 3 0.6<br/>2 4 0.1<br/>1 5 2.5<br/>3 5 0.1<br/>5 6 0.7<br/>4 3 0.1<br/></p>
