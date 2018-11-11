@@ -51,9 +51,6 @@ bfs.graph_traversal("1", my_graph.node_map)
 ## DFS
 
 ```python
-##########
-#TEST BFS
-##########
 
 my_graph.reset()
 bfs = BFS()
@@ -71,9 +68,7 @@ bfs.graph_traversal("1", my_graph.node_map)
 ## Dijkstra
 
 ```python
-###############
-# TEST DIJKSTRA
-###############
+
 my_graph.reset()
 dijkstra = Dijkstra()
 dijkstra.shortest_path("1",  my_graph.node_map)
