@@ -35,14 +35,9 @@ my_graph.build_graph(<"file path">)
 ## BFS
 
 ```python
-##########
-#TEST BFS
-##########
-
 my_graph.reset()
-my_graph_bfs = my_graph.node_map
 bfs = BFS()
-bfs.graph_traversal("1", my_graph_bfs)
+bfs.graph_traversal("1", my_graph.node_map)
 ```
 ```
   { id: 1, num_neighbors: 3, dist: inf }
@@ -61,9 +56,8 @@ bfs.graph_traversal("1", my_graph_bfs)
 ##########
 
 my_graph.reset()
-my_graph_bfs = my_graph.node_map
 bfs = BFS()
-bfs.graph_traversal("1", my_graph_bfs)
+bfs.graph_traversal("1", my_graph.node_map)
 ```
 ```
   { id: 1, num_neighbors: 3, dist: inf }
@@ -81,9 +75,8 @@ bfs.graph_traversal("1", my_graph_bfs)
 # TEST DIJKSTRA
 ###############
 my_graph.reset()
-my_graph_dj = my_graph.node_map
 dijkstra = Dijkstra()
-dijkstra.shortest_path("1", my_graph_dj)
+dijkstra.shortest_path("1",  my_graph.node_map)
 node_destination = my_graph.get_node("6")
 gr_dj.print_shortest_path(node_destination)
 ```
