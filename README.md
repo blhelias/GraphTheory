@@ -21,9 +21,10 @@ Let's dive into graph theory world, we address topic such as data structures, sh
 ### Import
 
 ```python
-from graphTheory.BFS import BFS
-from graphTheory.Dijkstra import Dijkstra
 from graphTheory.Graph import Graph
+from graphTheory.BFS import BFS
+from graphTheory.DFS import DFS
+from graphTheory.Dijkstra import Dijkstra
 ```
 ## Graph
 
@@ -83,3 +84,5 @@ gr_dj.print_shortest_path(node_destination)
   { id: 2, num_neighbors: 1, dist: 0.2 }
   { id: 1, num_neighbors: 3, dist: 0.0 }
 ```
+
+# TODO: Astar
