@@ -9,10 +9,10 @@ Let's dive into graph theory world, we address topic such as data structures, sh
     </tr>
     <tr>
       <td>
-          <img src="https://i.imgur.com/zo5qdaX.png" width=200/>
+          <img src="https://i.imgur.com/zo5qdaX.png" width=400/>
       </td>
       <td>
-          <img src="https://i.imgur.com/VlIlALP.png" width=400/>
+          <img src="https://i.imgur.com/VlIlALP.png" width=200/>
       </td>
     </tr>
   </table>  
