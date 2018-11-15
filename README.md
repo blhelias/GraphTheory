@@ -38,7 +38,7 @@ my_graph.build_graph(<"file path">)
 ```python
 my_graph.reset()
 bfs = BFS()
-bfs.graph_traversal("1", my_graph.node_map)
+bfs.graph_traversal(1, my_graph.node_map)
 ```
 ```
   { id: 1, num_neighbors: 3, dist: inf }
@@ -55,7 +55,7 @@ bfs.graph_traversal("1", my_graph.node_map)
 
 my_graph.reset()
 bfs = BFS()
-bfs.graph_traversal("1", my_graph.node_map)
+bfs.graph_traversal(1, my_graph.node_map)
 ```
 ```
   { id: 1, num_neighbors: 3, dist: inf }
@@ -72,9 +72,9 @@ bfs.graph_traversal("1", my_graph.node_map)
 
 my_graph.reset()
 dijkstra = Dijkstra()
-dijkstra.shortest_path("1",  my_graph.node_map)
+dijkstra.shortest_path(1,  my_graph.node_map)
 node_destination = my_graph.get_node("6")
-gr_dj.print_shortest_path(node_destination)
+my_graph.print_shortest_path(node_destination)
 ```
 ```
   { id: 6, num_neighbors: 0, dist: 1.2 }
@@ -85,7 +85,7 @@ gr_dj.print_shortest_path(node_destination)
   { id: 1, num_neighbors: 3, dist: 0.0 }
 ```
 
-# TODO: Astar
+# Astar
 <div>
   <table>
     <tr>
@@ -102,3 +102,20 @@ gr_dj.print_shortest_path(node_destination)
     </tr>
   </table>  
 </div>
+
+```python
+
+my_graph.reset()
+astar = Astar()
+my_graph = build_graph_coor(<file_path>)
+astar.shortest_path(1, 14, my_graph.node_map)
+my_graph.print_shortest_path(node_destination)
+```
+```
+  { id: 6, num_neighbors: 0, dist: 1.2 }
+  { id: 5, num_neighbors: 1, dist: 0.5 }
+  { id: 3, num_neighbors: 1, dist: 0.4 }
+  { id: 4, num_neighbors: 1, dist: 0.3 }
+  { id: 2, num_neighbors: 1, dist: 0.2 }
+  { id: 1, num_neighbors: 3, dist: 0.0 }
+```
