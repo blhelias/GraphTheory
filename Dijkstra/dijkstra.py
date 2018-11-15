@@ -1,12 +1,8 @@
 
-
-# import sys
-# sys.path.insert(0, "../")
-
 from typing import Dict
 
-from ..Graph.graph import Graph
-from ..Graph.path import Path
+from ..Graph import Graph
+from ..Graph import Path
 from ..utils import PriorityQueue
 
 
@@ -16,8 +12,8 @@ class Dijkstra:
 
     Example
     -------
-        >>> from ..Graph.graph import Graph
-        >>> from ..Dijkstra.dijkstra import Dijkstra
+        >>> from ..Graph import Graph
+        >>> from ..Dijkstra import Dijkstra
         >>> gr = Graph()
         >>> gr.build_graph("../test/test_graph.txt")
         >>> my_graph = gr.node_map
@@ -32,7 +28,7 @@ class Dijkstra:
         { id: 2, num_neighbors: 1, dist: 0.2 }
         { id: 1, num_neighbors: 3, dist: 0.0 }
     """
-    
+
     def shortest_path(self, source: "Node", node_map: Dict):
         pq = PriorityQueue()
         # Initialize distance and visited parameter for each node
@@ -47,7 +43,7 @@ class Dijkstra:
         node_seen = 0
         while (not pq.is_empty()) and (node_seen < len(node_map)):
             v = pq.pop() # path.dest
-            #  Check if we already visited the node 
+            #  Check if we already visited the node
             if v.scratch:
                 continue
             # Now it 's visited

@@ -23,18 +23,18 @@ class DFS:
     { id: 5, num_neighbors: 1, dist: inf }
     { id: 6, num_neighbors: 0, dist: inf }
 
-    /!\ These 2 variations of DFS (recursion ant iteration)
+    WARNING: These 2 variations of DFS (recursion ant iteration)
     visit each vertex in the opposite order from each other
-    in our example first recursive technic gives {1, 2, 4, 3, 5, 6} 
+    in our example first recursive technic gives {1, 2, 4, 3, 5, 6}
     whereas the 2nd iterative technic gives us {1, 5, 6, 3, 2, 4}
     """
-    
+
     def graph_traversal_rec(self, source: "Node", node_map: Dict):
-        """Depth-first search travesal in a recursive way 
+        """Depth-first search travesal in a recursive way
         Visit child vertices before sibblings (lexicographic order)
-        
+
         Arguments:
-            source {Node} 
+            source {Node}
             node_map {Dict}
         """
         source = node_map[source]
@@ -45,11 +45,11 @@ class DFS:
                 self.graph_traversal_rec(str(e.destination.id), node_map)
 
     def graph_traversal(self, source: "Node", node_map: Dict):
-        """Depth-first search travesal in an iterative way 
+        """Depth-first search travesal in an iterative way
         Visit child vertices before sibblings (lexicographic order)
-        
+
         Arguments:
-            source {Node} 
+            source {Node}
             node_map {Dict}
         """
 
