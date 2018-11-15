@@ -97,7 +97,7 @@ gr_dj.print_shortest_path(node_destination)
           <img src="https://i.imgur.com/sKyagB6.png" width=400/>
       </td>
       <td>
-          <img src="https://i.imgur.com/v5VTtKn.png" width=300/>
+          <img src="https://i.imgur.com/v5VTtKn.png" width=250/>
       </td>
     </tr>
   </table>  
