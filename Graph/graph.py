@@ -18,7 +18,7 @@ class Graph:
 
         Arguments:
             node_id {int} -- key of the node we are looking for.
-        
+
         Returns:
             Node
         """
@@ -29,17 +29,17 @@ class Graph:
             v = self.node_map[node_id]
         return v
 
-    def add_edge(self, source_node: Node, 
+    def add_edge(self, source_node: Node,
                  dest_node: Node, cost: float) -> None:
         """ Add a new neighbor for a given node
-        
+
         Arguments:
             source_node {Node} -- node which is given new neighbor
             dest_node {Node} -- new neighbor
             cost {float} -- weight of the edge
-        
+
         Returns:
-            None 
+            None
         """
         v: Node = self.get_node(source_node.id)
         w: Node = self.get_node(dest_node.id)
@@ -47,10 +47,10 @@ class Graph:
 
     def build_graph(self, path: str) -> None:
         """Build graph, which is a map of nodes
-        
+
         Arguments:
             path {str} -- path of the .txt file representing the graph
-        
+
         Returns:
             None
         """
@@ -60,10 +60,37 @@ class Graph:
             graph = [line.split(" ") for line in graph]
 
         for node_element in graph:
-            v = self.get_node(node_element[0])
-            w = self.get_node(node_element[1])
-            self.add_edge(v, w, node_element[2])
-    
+            v = self.get_node(int(node_element[0]))
+            w = self.get_node(int(node_element[1]))
+            self.add_edge(v, w, float(node_element[2]))
+
+
+    def build_graph_coor(self, path: str) -> None:
+
+        """Build graph, which is a map of nodes
+
+        Arguments:
+            path {str} -- path of the .txt file representing the graph
+
+        Returns:
+            None
+        """
+        with open(path) as graph:
+            graph = graph.read()
+            graph = graph.split('\n')
+            print(graph)
+            graph = [line.split(" ") for line in graph]
+        for node_element in graph:
+            v = self.get_node(int(node_element[0]))
+            coor_v = tuple((int(node_element[3]), int(node_element[4])))
+            v.set_coor(coor_v)
+
+            w = self.get_node(int(node_element[1]))
+
+            coor_w = (int(node_element[5]), int(node_element[6]))
+            w.set_coor(coor_w)
+            self.add_edge(v, w, float(node_element[2]))
+
     def print_shortest_path(self, destination_node: Node):
         dist: float = destination_node.dist
         path_node = destination_node
@@ -72,7 +99,7 @@ class Graph:
             path_node = path_node.prev
             dist = path_node.dist
             print(path_node)
-    
+
     def reset(self):
         for _, value_node in self.node_map.items():
             value_node.scratch = False

@@ -5,7 +5,7 @@ Let's dive into graph theory world, we address topic such as data structures, sh
   <table>
     <tr>
       <th>Graph</th>
-      <th>.txt file</th>
+      <th>node1 node2 weight</th>
     </tr>
     <tr>
       <td>

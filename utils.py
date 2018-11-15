@@ -33,3 +33,13 @@ class PriorityQueue:
         """
 
         return len(self._queue) == 0
+
+
+    def __repr__(self) -> None:
+        """Print our graph
+        """
+        to_print = ""
+        for node in self._queue:
+            node_key = node[2]
+            to_print += f"node_key "
+        return "{ " + to_print + " }"
