@@ -118,9 +118,11 @@ astar.shortest_path(1, 14, my_graph.node_map)
 my_graph.print_shortest_path(node_destination)
 ```
 ```
-  { id: 1, num_neighbors: 3, dist: 1.2 }
-  { id: 4, num_neighbors: 5, dist: 0.5 }
-  { id: 8, num_neighbors: 5, dist: 0.4 }
-  { id: 11, num_neighbors: 6, dist: 0.3 }
-  { id: 14, num_neighbors: 3, dist: 0.2 }
+{ id: 14, num_neighbors: 0, scratch: True, dist: 5.0 }
+{ id: 11, num_neighbors: 3, scratch: True, dist: 4.0 }
+{ id: 8, num_neighbors: 2, scratch: True, dist: 3.0 }
+{ id: 5, num_neighbors: 2, scratch: True, dist: 2.0 }
+{ id: 4, num_neighbors: 1, scratch: True, dist: 1.0 }
+{ id: 1, num_neighbors: 3, scratch: True, dist: 0.0 }
+
 ```
