@@ -91,7 +91,7 @@ my_graph.print_shortest_path(node_destination)
   { id: 1, num_neighbors: 3, dist: 0.0 }
 ```
 
-# Astar
+## Astar
 <div>
   <table>
     <tr>
