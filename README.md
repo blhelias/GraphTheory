@@ -90,14 +90,14 @@ gr_dj.print_shortest_path(node_destination)
   <table>
     <tr>
       <th>Graph</th>
-      <th>node1 node2 weight</th>
+      <th>node1 node2 weight x1 y1 x2 y2</th>
     </tr>
     <tr>
       <td>
           <img src="https://i.imgur.com/sKyagB6.png" width=400/>
       </td>
       <td>
-          <img src="https://i.imgur.com/v5VTtKn.png" width=200/>
+          <img src="https://i.imgur.com/v5VTtKn.png" width=300/>
       </td>
     </tr>
   </table>  
