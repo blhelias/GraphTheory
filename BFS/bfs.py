@@ -23,12 +23,12 @@ class BFS:
     { id: 4, num_neighbors: 1, dist: inf }
     { id: 6, num_neighbors: 0, dist: inf }
     """
-    
-    def graph_traversal(self, source: "Node", node_map: Dict):
+
+    def graph_traversal(self, source: int, node_map: Dict):
         """Breadth first search travesal
-        
+
         Arguments:
-            source {Node} 
+            source {Node}
             node_map {Dict}
         """
 
