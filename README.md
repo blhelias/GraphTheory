@@ -123,5 +123,4 @@ my_graph.print_shortest_path(node_destination)
   { id: 8, num_neighbors: 5, dist: 0.4 }
   { id: 11, num_neighbors: 6, dist: 0.3 }
   { id: 14, num_neighbors: 3, dist: 0.2 }
-
 ```
