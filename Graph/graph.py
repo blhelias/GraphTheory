@@ -65,6 +65,26 @@ class Graph:
             self.add_edge(v, w, float(node_element[2]))
 
 
+    def build_directed_graph(self, path: str) -> None:
+        """Build graph, which is a map of nodes
+
+        Arguments:
+            path {str} -- path of the .txt file representing the graph
+
+        Returns:
+            None
+        """
+        with open(path) as graph:
+            graph = graph.read()
+            graph = graph.split('\n')
+            graph = [line.split(" ") for line in graph]
+
+        for node_element in graph:
+            v = self.get_node(int(node_element[0]))
+            w = self.get_node(int(node_element[1]))
+            self.add_edge(v, w, float(node_element[2]))
+            self.add_edge(w, v, float(node_element[2]))
+
     def build_graph_coor(self, path: str) -> None:
 
         """Build graph, which is a map of nodes
@@ -75,6 +95,7 @@ class Graph:
         Returns:
             None
         """
+
         with open(path) as graph:
             graph = graph.read()
             graph = graph.split('\n')
