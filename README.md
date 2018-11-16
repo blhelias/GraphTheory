@@ -1,6 +1,5 @@
 ### TODO
 
-* Manage undirected graph
 * Kruskal
 * Prim
 
