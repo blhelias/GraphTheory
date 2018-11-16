@@ -66,9 +66,9 @@ bfs.graph_traversal(1, my_graph.node_map)
 ```
   { id: 1, num_neighbors: 3, dist: inf }
   { id: 2, num_neighbors: 1, dist: inf }
+  { id: 4, num_neighbors: 1, dist: inf }
   { id: 3, num_neighbors: 1, dist: inf }
   { id: 5, num_neighbors: 1, dist: inf }
-  { id: 4, num_neighbors: 1, dist: inf }
   { id: 6, num_neighbors: 0, dist: inf }
 ```
 
