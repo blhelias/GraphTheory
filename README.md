@@ -4,7 +4,7 @@
 * Prim
 
 # GraphTheory
-Let's dive into graph theory world, we address topic such as data structures, shortest path, graph traversal...
+Let's dive into graph theory world, we address topic such as data structures, shortest path, graph traversal, minimum spanning tree...
 
 <div>
   <table>
