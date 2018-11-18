@@ -158,7 +158,7 @@ prim.minimum_spanning_tree(1, my_graph.node_map)
 { node: 4, previous: 1 }
 { node: 5, previous: 7 }
 { node: 6, previous: 7 }
-{ node: 7, previous: 6 }
+{ node: 7, previous: 4 }
 ```
 
 
