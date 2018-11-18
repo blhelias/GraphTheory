@@ -152,7 +152,7 @@ my_graph = build_graph(<file_path>)
 prim.minimum_spanning_tree(1, my_graph.node_map)
 ```
 ```python
-{ node: 1, previous: 
+{ node: 1, previous: None}
 { node: 2, previous: 1 }
 { node: 3, previous: 4 }
 { node: 4, previous: 1 }
