@@ -135,10 +135,10 @@ my_graph.print_shortest_path(node_destination)
     </tr>
     <tr>
       <td>
-          <img src="https://i.imgur.com/nMGzq3g.png" width=400/>
+          <img src="https://i.imgur.com/fqaFZgP.png" width=400/>
       </td>
       <td>
-          <img src="https://i.imgur.com/5quD2Tl.png" width=400/>
+          <img src="https://i.imgur.com/9kPF2UX.png" width=400/>
       </td>
     </tr>
   </table>  
