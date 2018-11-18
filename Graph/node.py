@@ -8,7 +8,7 @@ class Node:
         self.adj_list: List["Edge"] = []
         self.dist = float("Inf")
         self.prev = None
-        self.coor = None
+        self.coor = None # useful for A*
 
     def set_coor(self, tuple_coor):
         if self.coor == None:
@@ -19,7 +19,6 @@ class Node:
 
     def __repr__(self):
         return "{ " + f"id: {self.id}, "\
-                + f"num_neighbors: {len(self.adj_list)}, "\
                 + f"scratch: {self.scratch}, "\
                 + f"dist: {self.dist}"\
                 + " }"

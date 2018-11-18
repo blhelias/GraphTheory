@@ -45,7 +45,7 @@ class Graph:
         w: Node = self.get_node(dest_node.id)
         v.adj_list.append(Edge(w, cost))
 
-    def build_graph(self, path: str) -> None:
+    def build_digraph(self, path: str) -> None:
         """Build graph, which is a map of nodes
 
         Arguments:
@@ -65,7 +65,7 @@ class Graph:
             self.add_edge(v, w, float(node_element[2]))
 
 
-    def build_directed_graph(self, path: str) -> None:
+    def build_graph(self, path: str) -> None:
         """Build graph, which is a map of nodes
 
         Arguments:
@@ -115,16 +115,17 @@ class Graph:
     def print_shortest_path(self, destination_node: Node):
         dist: float = destination_node.dist
         path_node = destination_node
-        print(path_node)
+        print("source: ",path_node)
         while dist > 0.:
             path_node = path_node.prev
             dist = path_node.dist
             print(path_node)
 
-    def reset(self):
+    def reset(self) -> None:
         for _, value_node in self.node_map.items():
             value_node.scratch = False
-            value_node.det_dist = float("Inf")
+            value_node.dist = float("Inf")
+            value_node.prev = None
 
     def __repr__(self) -> None:
         """Print our graph
