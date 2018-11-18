@@ -125,6 +125,8 @@ my_graph.print_shortest_path(node_destination)
 
 ```
 
+## Prim
+
 ```python
 
 my_graph.reset()
