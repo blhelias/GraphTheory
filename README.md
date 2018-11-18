@@ -131,7 +131,7 @@ my_graph.print_shortest_path(node_destination)
   <table>
     <tr>
       <th>Graph</th>
-      <th>node1 node2 weight</th>
+      <th>minimum spanning tree</th>
     </tr>
     <tr>
       <td>
