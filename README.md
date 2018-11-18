@@ -127,6 +127,23 @@ my_graph.print_shortest_path(node_destination)
 
 ## Prim
 
+<div>
+  <table>
+    <tr>
+      <th>Graph</th>
+      <th>node1 node2 weight</th>
+    </tr>
+    <tr>
+      <td>
+          <img src="https://i.imgur.com/nMGzq3g.png" width=400/>
+      </td>
+      <td>
+          <img src="https://i.imgur.com/5quD2Tl.png" width=200/>
+      </td>
+    </tr>
+  </table>  
+</div>
+
 ```python
 
 my_graph.reset()
