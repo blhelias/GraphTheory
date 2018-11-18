@@ -6,7 +6,7 @@ class Node:
         self.id = id
         self.scratch = False
         self.adj_list: List["Edge"] = []
-        self.dist = float("Inf")
+        self.dist = float("Inf") 
         self.prev = None
         self.coor = None # useful for A*
 
