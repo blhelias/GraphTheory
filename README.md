@@ -1,7 +1,7 @@
 ### TODO
 
 * Kruskal
-* Prim
+
 
 # GraphTheory
 Let's dive into graph theory world, we address topic such as data structures, shortest path, graph traversal, minimum spanning tree...
@@ -124,3 +124,13 @@ my_graph.print_shortest_path(node_destination)
 { id: 1, num_neighbors: 3, scratch: True, dist: 0.0 }
 
 ```
+
+```python
+
+my_graph.reset()
+prim = Prim()
+my_graph = build_graph(<file_path>)
+prim.minimum_spanning_tree(1, my_graph.node_map)
+```
+
+
